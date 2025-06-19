@@ -1,3 +1,87 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes glide {
+  0%, 100% { transform: translateX(-50%); }
+  50% { transform: translateX(50%); }
+}
+
+.animate-glide {
+  animation: glide 2s ease-in-out infinite;
+}
+@keyframes loader-glow {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(50%) scale(0.8); }
+}
+
+.animate-loader-glow {
+  animation: loader-glow 2s ease-in-out infinite;
+}
+.loader-bar {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.loader-bar--h {
+  top: 50%;
+  left: 8%;
+  width: 84%;
+  height: 4px;
+  border-radius: 2px;
+  animation: slideH 1.8s infinite ease-in-out;
+}
+
+.loader-bar--v {
+  left: 50%;
+  top: 8%;
+  width: 4px;
+  height: 84%;
+  border-radius: 2px;
+  animation: slideV 1.5s infinite ease-in-out;
+}
+
+@keyframes slideH {
+  0%, 100% { transform: translateX(-50%) scaleX(0.4); }
+  50% { transform: translateX(50%) scaleX(0.4); }
+}
+
+@keyframes slideV {
+  0%, 100% { transform: translateY(-50%) scaleY(0.4); }
+  50% { transform: translateY(50%) scaleY(0.4); }
+}
+/* Single rotating rectangle */
+.loader-bar--single {
+  position: absolute;
+  top: calc(50% - 4px);
+  left: calc(50% - 20px);
+  width: 40px;
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  animation: rotate-bar 1.5s linear infinite;
+}
+
+@keyframes rotate-bar {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Split bar animations (same as before) */
+.loader-bar { position: absolute; background-color: rgba(0, 0, 0, 0.6); }
+.loader-bar--h {
+  top: 50%; left: 8%; width: 84%; height: 4px; border-radius: 2px;
+  animation: slideH 1.8s infinite ease-in-out;
+}
+.loader-bar--v {
+  left: 50%; top: 8%; width: 4px; height: 84%; border-radius: 2px;
+  animation: slideV 1.5s infinite ease-in-out;
+}
+@keyframes slideH {
+  0%, 100% { transform: translateX(-50%) scaleX(0.4); }
+  50% { transform: translateX(50%) scaleX(0.4); }
+}
+@keyframes slideV {
+  0%, 100% { transform: translateY(-50%) scaleY(0.4); }
+  50% { transform: translateY(50%) scaleY(0.4); }
+}
