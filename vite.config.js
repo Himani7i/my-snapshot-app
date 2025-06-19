@@ -6,6 +6,7 @@ import glsl from 'vite-plugin-glsl';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  base:'/my-snapshot-app/',
   plugins: [react(),glsl()],
   esbuild: {
     loader: "jsx",
